@@ -16,7 +16,7 @@ export type State = {
 let sql: postgres.Sql<{}>;
 
 try {
-	sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
+	sql = postgres(process.env.njs_POSTGRES_URL!, { ssl: 'require' });
 } catch (err) {
 	console.error(err);
 	Response.json({
