@@ -22,7 +22,6 @@ export default function EditInvoiceForm({
 	const initialState: State = { message: null, errors: {} };
 	const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
 	const [state, formAction] = useActionState(updateInvoiceWithId, initialState);
-	console.log(state);
 
 	return (
 		<form action={formAction}>
@@ -39,6 +38,7 @@ export default function EditInvoiceForm({
 						<select
 							id='customer'
 							name='customerId'
+							defaultValue={invoice.customer_id}
 							className='peer block w-full cursor-pointer rounded-md border border-gray-200 py-2 pl-10 text-sm outline-2 placeholder:text-gray-500'
 						>
 							<option
