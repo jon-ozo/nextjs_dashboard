@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USER/Documents/my_projects/nextjs_dashboard/nextjs-dashboard/app/dashboard/loading.tsx"],"sourcesContent":["export default function Loading() {\r\n\treturn <div>loading...</div>;\r\n}\r\n"],"names":[],"mappings":";;;;;AAAe,SAAS;IACvB,qBAAO,6WAAC;kBAAI;;;;;;AACb","debugId":null}}]
+}

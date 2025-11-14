@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 108, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/USER/Documents/my_projects/nextjs_dashboard/nextjs-dashboard/app/query/route.ts"],"sourcesContent":["import postgres from 'postgres';\n\nconst sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });\n\nasync function listInvoices() {\n\tconst data = await sql`\n    SELECT invoices.amount, customers.name\n    FROM invoices\n    JOIN customers ON invoices.customer_id = customers.id\n    WHERE invoices.amount = 666;\n  `;\n\n\treturn data;\n}\n\nexport async function GET() {\n\t// return Response.json({\n\t//   message:\n\t//     'Uncomment this file and remove this line. You can delete this file when you are finished.',\n\t// });\n\ttry {\n\t\treturn Response.json(await listInvoices());\n\t} catch (error) {\n\t\treturn Response.json({ error }, { status: 500 });\n\t}\n}\n"],"names":[],"mappings":";;;AAAA;;AAEA,MAAM,MAAM,CAAA,GAAA,+LAAA,CAAA,UAAQ,AAAD,EAAE,QAAQ,GAAG,CAAC,YAAY,EAAG;IAAE,KAAK;AAAU;AAEjE,eAAe;IACd,MAAM,OAAO,MAAM,GAAG,CAAC;;;;;EAKtB,CAAC;IAEF,OAAO;AACR;AAEO,eAAe;IACrB,yBAAyB;IACzB,aAAa;IACb,mGAAmG;IACnG,MAAM;IACN,IAAI;QACH,OAAO,SAAS,IAAI,CAAC,MAAM;IAC5B,EAAE,OAAO,OAAO;QACf,OAAO,SAAS,IAAI,CAAC;YAAE;QAAM,GAAG;YAAE,QAAQ;QAAI;IAC/C;AACD","debugId":null}}]
+}
